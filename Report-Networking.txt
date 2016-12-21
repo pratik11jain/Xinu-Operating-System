@@ -1,0 +1,37 @@
+Assignment - 8 (Networking)
+
+UDP Test Commands :-
+udprequest 192.168.1.100 2000 
+udprequest 192.168.1.100 2000 -f
+
+ARP Test Commands :-
+arptest
+arpdump
+
+Description Of Implementation:
+-> system/platform/arm-bbb/main.c
+   Uncommented line with netstart(..., ...).
+-> shell/xsh_udprequest.c
+   Sends and received data from server.
+-> apps/future_cons_udp.c
+   Consumer for the values produced by server.
+-> include/arp.h
+   Added timestamp field to arpentry.
+-> net/arp.c
+   Modified code to update timestamp.
+-> system/platform/arm-bbb/clkhandler.c
+   Modified for removing the outdated arpcache slots.
+-> server.c
+   Code for linux server.
+-> shell/xsh_arptest.c
+   Adds dummy entry to arpcache with current timestamp.
+-> shell/xsh_arpdump.c
+   Prints all the contents for arpcache on console.
+
+Division of Tasks:
+Both Team members studied the theory behind the Networking from the book (Chapter 16 & Chapter 17).
+Both Team members studied the theory behind the Netowrking from the videos (Module Networking).
+Code written by Pratik Jain in files :- xsh_udprequest.c, arp.h, clkhandler.c, server.c
+Code written by Anshul Jain in files :- main.c, future_cons_udp.c, arp.c, xsh_arptest.c, xsh_arpdump.c
+The report was made by both members together.
+
